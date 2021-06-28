@@ -21,3 +21,12 @@
 // * `DELETE` to remove user by its `_id`
 
 // **BONUS**: Remove a user's associated thoughts when deleted
+
+
+const router = require('express').Router();
+
+//set up Get all and Post at api/users
+
+router
+
+module.exports = router;
