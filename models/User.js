@@ -29,3 +29,9 @@ const { Schema, Model } = require('mongoose');
      }
    
  })
+
+ //create user model using userschema
+ const User = model('User', UserSchema);
+
+ //export user model
+ module.exports = User;
