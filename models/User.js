@@ -1,6 +1,10 @@
-const { Schema, Model } = require('mongoose');
+const { Schema, model } = require('mongoose');
+const thoughts = require('./Thought');
 
-
+var validateEmail = function(email) {
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(email)
+};
 
  const UserSchema = new Schema({
       //  `username`
@@ -18,17 +22,23 @@ const { Schema, Model } = require('mongoose');
          type: String,
          required: true,
          trim: true,
-         unique: true
-         //validate  Must match a valid email address (look into Mongoose's matching validation)
+         unique: true,
+         validate: [validateEmail, 'Please fill a valid email address'],
+         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
      },
-     thoughts: {
-        // * Array of `_id` values referencing the `Thought` model
-     },
-     friends: {
-        // * Array of `_id` values referencing the `User` model (self-reference)
-     }
+     thoughts: [
+         {
+             type: Schema.Types.ObjectId,
+             ref: 'Thought'
+         }
+        ]
+     
+    //  friends: {
+    //      * Array of `_id` values referencing the `User` model (self-reference)
+    //  }
    
  })
+//  console.log('Schema!!!!!!', UserSchema)
 
  //create user model using userschema
  const User = model('User', UserSchema);
