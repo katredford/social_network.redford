@@ -18,3 +18,29 @@
 // * `PUT` to update a thought by its `_id`
 
 // * `DELETE` to remove a thought by its `_id`
+
+
+const router = require('express').Router();
+const {
+    getAllThoughts,
+    getThoughtById,
+    createThought,
+    updateThought,
+    deleteThought
+  } = require('../../controllers/thought-controller');
+
+
+//api/users
+router
+  .route('/')
+  .get(getAllThoughts)
+  .post(createThought);
+
+// /api/users/:id
+router
+  .route('/:id')
+  .get(getThoughtById)
+  .put(updateThought)
+  .delete(deleteThought);
+
+module.exports = router;

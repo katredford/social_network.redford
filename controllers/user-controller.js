@@ -15,7 +15,7 @@ const userController = {
         User.findOne({_id: params.id })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No pizza found with this id' });
+                res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
             res.json(dbUserData);
@@ -28,7 +28,7 @@ const userController = {
 
     createUser({ body }, res) {
         User.create(body)
-        .then(dbPizzaData => res.json(dbUserData))
+        .then(dbUserData => res.json(dbUserData))
         .catch(err => res.json(err));
     },
 

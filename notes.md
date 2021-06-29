@@ -18,3 +18,9 @@ app is called friendTime
 		}
 	]
 }
+
+{
+  "thought": "Here's a cool thought...",
+  "username": "katie",
+  "userId": "60da77f07a5679c1ff454190"
+ }
