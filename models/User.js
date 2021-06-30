@@ -31,13 +31,23 @@ var validateEmail = function(email) {
              type: Schema.Types.ObjectId,
              ref: 'Thought'
          }
-        ]
+        ],
      
     //  friends: {
     //      * Array of `_id` values referencing the `User` model (self-reference)
     //  }
-   
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+       ]
+
  })
+
+ UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length
+})
 //  console.log('Schema!!!!!!', UserSchema)
 
  //create user model using userschema
