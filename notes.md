@@ -1,4 +1,4 @@
-npm install mongoose
+<!-- npm install mongoose
 
 app is called friendTime
 
@@ -94,3 +94,7 @@ app is called friendTime
   "username": "hamblee",
   "userId": "60da90b65586fac77b289f7a"
  },
+
+ 60da889446fdd9c6b27c6559  tester thought id-->
+
+http://localhost:3001/api/users/60da707c7a5679c1ff45418b/friends/60da908b5586fac77b289f76 delete friends

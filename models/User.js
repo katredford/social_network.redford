@@ -41,7 +41,14 @@ var validateEmail = function(email) {
             type: Schema.Types.ObjectId,
             ref: 'User'
         }
-       ]
+       ]},
+
+       {
+        toJSON: {
+          virtuals: true,
+        },
+        id: false
+      
 
  })
 

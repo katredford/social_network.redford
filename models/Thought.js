@@ -20,12 +20,15 @@ const reactionSchema = require('./Reaction');
 
 
     { 
-        timestamps: { createdAt: 'created_at' }
+        timestamps: { createdAt: 'created_at' },
+        toJSON: {
+            virtuals: true,
+        },
+        id:false
 
     },
    
-    
-    )
+);
 
     thoughtSchema.virtual('reactionCount').get(function() {
         return this.reactions.length
