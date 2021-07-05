@@ -8,7 +8,7 @@ all the routes you need to create users, post thoughts, reactions, and become fr
   
   ## walkthrough
 
-walkthrough video link: https://www.youtube.com/watch?v=WiVMq8cizug
+walkthrough video link: https://youtu.be/vdDAvNFYgCM
   
   ## Email
   katharine.redford@gmial.com
